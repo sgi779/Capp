@@ -1,1 +1,102 @@
+<html>
+	<head>
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<script src="script.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="stylesheet" href="feed.css">
+		<link rel="stylesheet" href="font.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<body style="background:white;">
+	
+	<div class="inp" style="position: absolute; top:20px;">
+		     
+		<p class="lab" id="chat">Chatid or Email id</p>
+		<input oninput="changei('chat','i1')" type="email" class="input" id="i1" placeholder="Chat id or Email id" data-jot=0>
+	</div>
+	<div class="inp" style="position: absolute; top:90px; ">
+		<p class="lab" id="chat1">FeedBack Discription</p>
+		<textarea oninput="changei('chat1','i2')" style="font-family: default;height:250px; border:2px solid grey; padding-top:10px;"class="input" id="i2" placeholder="Discription" data-jot=0></textarea>
+	</div>
+	<div class="inp" style="position: absolute; top:350px; " >
+		<p class="lab" id="chat2">Tags</p>
+		<div id="chips" class="chips" >
+   <span class="mdl-chip mdl-chip--deletable" style="border:1px solid black;"onclick="this.style.display='none';const index = de.indexOf('${str}');if (index > -1) {de.splice(index, 1) }">
+    <span class="mdl-chip__text">feedback</span>
+    <button type="button" class="mdl-button mdl-button--icon mdl-js-button"><i class="material-icons">cancel</i></button>
+</span>
+</div>
+		<input oninput="ctag('i3','chips')" oninput="changei('chat2','i3')" style="position:relative; bottom:10px; height:30px; border:2px solid grey;"class="input" id="i3" placeholder="Tags like critical,normal,bug,report etc" data-jot=0>
+	</div>
+	<!-- Raised button with ripple -->
+<button id="set"  onclick="goFire()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="position: absolute; top:500px; left:30vw;width:40vw;border:1px solid black; background:aqua;">
+  Submit
+</button>
+<div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button" id="show-dialog"></button>
+</div>
+<script>
+(function() {
+  'use strict';
+  var snackbarContainer = document.querySelector('#demo-snackbar-example');
+  var showSnackbarButton = document.querySelector('#set');
+  var handler = function(event) {
+    
+  };
+  showSnackbarButton.addEventListener('click', function() {
+if(document.getElementById("i1").value.length==0||document.getElementById("i2").value.length==0||document.getElementById("i1").value==" "*document.getElementById("i1").value.length||document.getElementById("i2").value==" "*document.getElementById("i2").value.length||document.getElementById("i2").value.length<10){
+    var data = {
+      message: 'discription and identity is must to be filled',
+      timeout: 2500,
+      actionHandler: handler,
+      actionText: 'Info'
+    };}else{
+    	document.getElementById("set").style.display="none";
+    	var data = {
+      message: 'Thanks for feedback',
+      timeout: 1500,
+    };}
+    	
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+}());
+</script>
+  
+  <dialog style="border:2px solid grey;border-radius:10px;"class="mdl-dialog">
+    <h1 class="mdl-dialog__title">Data isn't filled !</h1 >
+    <div class="mdl-dialog__content">
+      <p>
+        discription is must be of 10 characters and uid or email is defined
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button close">Got it!</button>
+    </div>
+  </dialog>
+  <script>
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#show-dialog');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+  </script>
+
+</html>

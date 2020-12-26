@@ -1,0 +1,55 @@
+.input{
+	display: inline-block;
+	width:90vw;
+	height:30px;
+	position:relative;
+	border-radius:10px;
+	border:2px solid grey;
+	outline:none;
+}
+.inp , .input{
+	text-align: center;
+}
+.inp{
+	width:90vw;
+	position: absolute;
+	left:5vw;
+	overflow-x: auto;
+}
+.lab{
+	top:5px;
+	font-size:0px;
+	position:relative;
+}
+#nav{
+	width:100vw;
+	position: absolute;
+	top:0;
+	left:0;
+	border-bottom:2px solid grey;
+}
+.nav-but,#nav{
+	height:50px;
+	background-color:black;
+	border-top:0;
+	border-left:0;
+}
+.nav-but{
+	border-bottom:0;
+	width:50px
+	outline:none;
+}
+textarea{
+	resize:none;
+}
+.mdl-chip{
+	display:inline-block;
+}
+.chips{
+	position:relative;
+	width:90vw;
+	overflow:auto;
+	height:50px;
+	background: transparent;
+	bottom:10px;
+}
