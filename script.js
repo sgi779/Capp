@@ -2,9 +2,9 @@ function gopin(lof){
 	location.replace(lof);
 }
 const shareData = {
-  title: 'MDN',
-  text: 'Learn web development on MDN!',
-  url: 'https://developer.mozilla.org',
+  title: 'join CApp',
+  text: 'Join to the Web chat with CApp',
+  url: 'https://sgi779.github.io/Capp/',
 }
 
 const btn = document.querySelector('.share');
