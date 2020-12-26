@@ -1,0 +1,36 @@
+.input{
+	position: absolute;
+	left:10vw;
+	border-radius:5px;
+	width:80vw;
+	height:40px;
+	border:1px solid black;
+	outline:none;
+	padding-left:5px;
+}
+.input:focus{
+	box-shadow:0 0 0 3px rgba(52, 152, 235,.5);
+}
+.start{
+	-webkit-user-select: none; /* Safari */
+   -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; 
+	position: absolute;
+	top:0;
+	left:0;
+	width:100vw;
+	height:140px;
+	background:black;
+	border-bottom:3px solid grey;
+}
+.end{
+	position: fixed;
+	bottom:0;
+	left:0;
+	width:100vw;
+	height:30px;
+	background:black;
+	border-top:3px solid grey;
+}
+
+	
